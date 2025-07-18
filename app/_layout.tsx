@@ -1,16 +1,25 @@
+import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 
 export default function RootLayout() {
-  // const [loaded] = useFonts({
-  //   SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  // });
+  const [fontsLoaded, fontError] = useFonts({
+    'sora-regular': require('@/assets/fonts/Sora-Regular.ttf'),
+    'sora-medium': require('@/assets/fonts/Sora-Medium.ttf'),
+    'sora-semiBold': require('@/assets/fonts/Sora-SemiBold.ttf'),
+    'sora-bold': require('@/assets/fonts/Sora-Bold.ttf'),
+  })
 
-  // if (!loaded) {
-  //   // Async font loading only occurs in development.
-  //   return null;
-  // }
+  if (fontError) {
+  console.error('Font load error:', fontError);
+  return null;
+}
+
+if (!fontsLoaded) {
+  return null; // or a loading screen
+}
+
 
   return (
     <>

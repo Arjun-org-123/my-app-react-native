@@ -1,12 +1,13 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import React from "react";
+import { SafeAreaView } from "react-native";
+import HomeScreen from "./index";
 
 const TabLaylout = () => {
   return (
-    <View>
-      <Text>TabLaylout</Text>
-    </View>
-  )
-}
+    <SafeAreaView style={{flex: 1}}>
+        <HomeScreen />
+    </SafeAreaView>
+  );
+};
 
-export default TabLaylout
+export default TabLaylout;
